@@ -80,4 +80,3 @@ interface HTTPServer : INSNetServiceDelegate
     [Export("numberOfWebSocketConnections")]
     nuint NumberOfWebSocketConnections();
 }
-}
