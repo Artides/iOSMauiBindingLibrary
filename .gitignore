@@ -396,3 +396,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#xcode and Mac
+.DS_Store
+*.pbxuser
+*.mode1v3
+*.mode2v3
+xcuserdata
+*~
