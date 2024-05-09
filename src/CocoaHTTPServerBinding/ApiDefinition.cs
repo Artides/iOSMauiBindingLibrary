@@ -4,7 +4,6 @@ using Foundation;
 namespace CocoaHTTPServerBinding;
 
 [BaseType(typeof(NSObject))]
-[Protocol, Model]
 interface HTTPServer : INSNetServiceDelegate
 {
 
