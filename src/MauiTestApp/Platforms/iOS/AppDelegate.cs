@@ -1,6 +1,5 @@
 ﻿using Foundation;
 using UIKit;
-using CocoaHTTPServerBinding;
 
 namespace MauiTestApp
 {
@@ -8,8 +7,10 @@ namespace MauiTestApp
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
     {
-        HTTPServer? _httpServer;
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+
+        /*
+        HTTPServer? _httpServer;
 
         void StartServer()
         {
@@ -66,6 +67,7 @@ You can customize this page for your app, make other pages, or even serve up dyn
             base.DidEnterBackground(application);
             _httpServer?.Stop();
         }
+    */
     }
 
 }
