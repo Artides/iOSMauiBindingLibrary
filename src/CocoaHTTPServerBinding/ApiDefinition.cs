@@ -7,40 +7,63 @@ namespace CocoaHTTPServerBinding;
 [Protocol, Model]
 interface HTTPServer : INSNetServiceDelegate
 {
-    // Properties
+
     [Export("documentRoot")]
     string DocumentRoot { get; set; }
 
     [Export("connectionClass")]
-    Class ConnectionClass { get; set; }
+    Class ConnectionClass();
+
+    [Export("setConnectionClass:")]
+    void SetConnectionClass(Class value);
 
     [Export("interface")]
-    string Interface { get; set; }
+    string Interface();
+
+    [Export("setInterface:")]
+    void SetInterface(string value);
 
     [Export("port")]
-    ushort Port { get; set; }
+    ushort Port();
+
+    [Export("listeningPort")]
+    ushort ListeningPort();
+
+    [Export("setPort:")]
+    void SetPort(ushort value);
 
     [Export("domain")]
-    string Domain { get; set; }
+    string Domain();
 
-    [Export("type")]
-    string Type { get; set; }
+    [Export("setDomain:")]
+    void SetDomain(string value);
 
     [Export("name")]
-    string Name { get; set; }
+    string Name();
 
     [Export("publishedName")]
-    string PublishedName { get; }
+    string PublishedName();
+
+    [Export("setName:")]
+    void SetName(string value);
+
+    [Export("type")]
+    string Type();
+
+    [Export("setType:")]
+    void SetType(string value);
+
+    [Export("republishBonjour")]
+    void RepublishBonjour();
 
     [Export("TXTRecordDictionary")]
-    NSDictionary TXTRecordDictionary { get; set; }
+    NSDictionary TXTRecordDictionary();
 
-    [Export("isRunning")]
-    bool IsRunning { get; }
+    [Export("setTXTRecordDictionary:")]
+    void SetTXTRecordDictionary(NSDictionary dict);
 
-    // Methods
     [Export("start:")]
-    bool Start(out NSError err);
+    bool Start(out NSError errPtr);
 
     [Export("stop")]
     void Stop();
@@ -48,13 +71,13 @@ interface HTTPServer : INSNetServiceDelegate
     [Export("stop:")]
     void Stop(bool keepExistingConnections);
 
-    [Export("republishBonjour")]
-    void RepublishBonjour();
+    [Export("isRunning")]
+    bool IsRunning();
 
     [Export("numberOfHTTPConnections")]
-    uint NumberOfHTTPConnections { get; }
+    nuint NumberOfHTTPConnections();
 
     [Export("numberOfWebSocketConnections")]
-    uint NumberOfWebSocketConnections { get; }
-
+    nuint NumberOfWebSocketConnections();
+}
 }

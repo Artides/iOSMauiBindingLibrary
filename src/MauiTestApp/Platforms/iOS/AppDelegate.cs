@@ -30,7 +30,7 @@ namespace MauiTestApp
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             _httpServer = new HTTPServer();
-            _httpServer.Type = @"_http._tcp.";
+            _httpServer.SetType(@"_http._tcp.");
             string webPath = Path.Combine(FileSystem.AppDataDirectory, "Web");
             if (!Directory.Exists(webPath)) Directory.CreateDirectory(webPath);
             File.WriteAllText(Path.Combine(webPath, "index.html"), @"
