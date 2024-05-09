@@ -1,29 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0-ios</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>true</ImplicitUsings>
-    <IsBindingProject>true</IsBindingProject>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-ios</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<IsBindingProject>true</IsBindingProject>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<NativeReference Include="libCocoaHTTPServer.a">
 			<Kind>Static</Kind>
-			<Frameworks>
-			</Frameworks>
-			<LinkerFlags>
-			</LinkerFlags>
-			<WeakFrameworks>
-			</WeakFrameworks>
-			<ForceLoad>False</ForceLoad>
-			<NeedsGccExceptionHandling>False</NeedsGccExceptionHandling>
-			<IsCxx>False</IsCxx>
-			<SmartLink>False</SmartLink>
+			<SmartLink>True</SmartLink>
+			<ForceLoad>True</ForceLoad>
 		</NativeReference>
 	</ItemGroup>
+
 </Project>

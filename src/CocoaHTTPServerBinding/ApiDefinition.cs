@@ -1,11 +1,11 @@
 using ObjCRuntime;
-using System.Net.WebSockets;
 using Foundation;
 
 namespace CocoaHTTPServerBinding;
 
 [BaseType(typeof(NSObject))]
-interface HTTPServer
+[Protocol, Model]
+interface HTTPServer : INSNetServiceDelegate
 {
     // Properties
     [Export("documentRoot")]
@@ -50,9 +50,6 @@ interface HTTPServer
 
     [Export("republishBonjour")]
     void RepublishBonjour();
-
-    [Export("addWebSocket:")]
-    void AddWebSocket(WebSocket ws);
 
     [Export("numberOfHTTPConnections")]
     uint NumberOfHTTPConnections { get; }

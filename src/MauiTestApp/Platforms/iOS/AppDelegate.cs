@@ -1,8 +1,10 @@
 ﻿using Foundation;
 using UIKit;
+using CocoaHTTPServerBinding;
 
 namespace MauiTestApp
 {
+
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate
     {
@@ -29,7 +31,7 @@ namespace MauiTestApp
         {
             _httpServer = new HTTPServer();
             _httpServer.Type = @"_http._tcp.";
-            string webPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web");
+            string webPath = Path.Combine(FileSystem.AppDataDirectory, "Web");
             if (!Directory.Exists(webPath)) Directory.CreateDirectory(webPath);
             File.WriteAllText(Path.Combine(webPath, "index.html"), @"
 <html>
