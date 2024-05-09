@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AC733632BECF53500E791CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC733622BECF53500E791CD /* Foundation.framework */; };
 		0AF2E4642BECB7F7006719A0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF2E41D2BECB7F5006719A0 /* GCDAsyncSocket.m */; };
 		0AF2E4652BECB7F7006719A0 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF2E4202BECB7F5006719A0 /* ContextFilterLogFormatter.m */; };
 		0AF2E4662BECB7F7006719A0 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF2E4222BECB7F5006719A0 /* DispatchQueueLogFormatter.m */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AC733622BECF53500E791CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0AF2E40F2BECB7C2006719A0 /* libCocoaHTTPServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaHTTPServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF2E41B2BECB7F5006719A0 /* About.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About.txt; sourceTree = "<group>"; };
 		0AF2E41C2BECB7F5006719A0 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -122,12 +124,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC733632BECF53500E791CD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AC733612BECF53500E791CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AC733622BECF53500E791CD /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0AF2E4062BECB7C1006719A0 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +146,7 @@
 				0AF2E4632BECB7F6006719A0 /* Extensions */,
 				0AF2E4312BECB7F5006719A0 /* Vendor */,
 				0AF2E4102BECB7C2006719A0 /* Products */,
+				0AC733612BECF53500E791CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

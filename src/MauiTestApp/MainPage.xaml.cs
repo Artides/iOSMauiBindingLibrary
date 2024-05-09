@@ -30,7 +30,8 @@ namespace MauiTestApp
             base.OnAppearing();
             string wwwRoot = Path.Combine(FileSystem.Current.AppDataDirectory, "wwwRoot");
             if (!Directory.Exists(wwwRoot)) Directory.CreateDirectory(wwwRoot);
-            File.WriteAllText(Path.Combine(wwwRoot, "index.html"), @"
+            var indexPath = Path.Combine(wwwRoot, "index.html");
+            File.WriteAllText(indexPath, @"
 <!DOCTYPE html>
 <html>
 <body>
@@ -45,11 +46,12 @@ namespace MauiTestApp
             httpServerService?.SetwwwRoot(wwwRoot);
             if (httpServerService?.Start(out Exception? error) == true)
             {
-                webView.Source = new UrlWebViewSource() { Url = httpServerService.GetUrl() };
+                var url = httpServerService.GetUrl();
+                webView.Source = new UrlWebViewSource() { Url = url };
             }
             else
             {
-                webView.Source = new UrlWebViewSource() { Url = "http://www.google.it" };
+                webView.Source = new UrlWebViewSource() { Url = indexPath };
 
             }
         }

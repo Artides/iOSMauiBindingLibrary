@@ -1923,8 +1923,8 @@ static NSMutableArray *recentNonces;
 	// You'll likely want to add your own custom headers, and then return [super preprocessResponse:response]
 	
 	// Add standard headers
-	NSString *now = [self dateAsString:[NSDate date]];
-	[response setHeaderField:@"Date" value:now];
+	//NSString *now = [self dateAsString:[NSDate date]];
+	//[response setHeaderField:@"Date" value:now];
 	
 	// Add server capability headers
 	[response setHeaderField:@"Accept-Ranges" value:@"bytes"];
