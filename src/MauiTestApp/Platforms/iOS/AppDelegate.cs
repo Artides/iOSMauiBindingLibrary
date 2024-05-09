@@ -30,6 +30,23 @@ namespace MauiTestApp
             _httpServer = new HTTPServer();
             _httpServer.Type = @"_http._tcp.";
             string webPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web");
+            if (!Directory.Exists(webPath)) Directory.CreateDirectory(webPath);
+            File.WriteAllText(Path.Combine(webPath, "index.html"), @"
+<html>
+<head>
+<title>iPhone HTTP Server Example</title>
+</head>
+<body bgcolor=""#FFFFFF"">
+<h1>Welcome to CocoaHTTPServer!</h1>
+
+You can customize this page for your app, make other pages, or even serve up dynamic content.<br/>
+
+<a href=""https://github.com/robbiehanson/CocoaHTTPServer"">CocoaHTTPServer Project Page</a><br/>
+
+</body>
+</html>
+");
+
             _httpServer.DocumentRoot = webPath;
 
             StartServer();
