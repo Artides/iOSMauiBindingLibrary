@@ -16,13 +16,13 @@ namespace MauiTestApp
             if (_httpServer == null) return;
             NSError error;
             bool started = _httpServer.Start(out error);
-            if (!started && error != null)
+            if (!started)
             {
-                Console.WriteLine($"Error starting HTTP server: {error.LocalizedDescription}");
+                Console.WriteLine($"Error starting HTTP server: {(error != null ?error.LocalizedDescription : "No error Description")}");
             }
             else
             {
-                Console.WriteLine("HTTP server started successfully.");
+                Console.WriteLine($"Started HTTp Server on port {_httpServer.ListeningPort()}");
             }
 
         }

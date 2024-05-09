@@ -14,7 +14,6 @@
 	<ItemGroup>
 		<NativeReference Include="libCocoaHTTPServer.a">
 			<Kind>Static</Kind>
-			<SmartLink>True</SmartLink>
 			<ForceLoad>True</ForceLoad>
 		</NativeReference>
 	</ItemGroup>
